@@ -7,8 +7,8 @@ WORKDIR /opt
 RUN git clone https://github.com/prawnsalad/KiwiIRC.git 
 
 WORKDIR /opt/KiwiIRC
-COPY server.key /opt/KiwiIRC/server.key
-COPY cert.pem /opt/KiwiIRC/cert.pem
+COPY dev-server.key /opt/KiwiIRC/server.key
+COPY dev-cert.pem /opt/KiwiIRC/cert.pem
 COPY config.js /opt/KiwiIRC/config.js
 
 RUN npm install
