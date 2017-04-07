@@ -16,5 +16,4 @@ RUN ./kiwi build
 
 #RUN apt-get update && apt-get install telnet
 
-ENTRYPOINT ["/opt/KiwiIRC/kiwi", "-f", "start"]
-CMD ["-c", "/opt/KiwiIRC/config.js"]
+CMD ["/opt/KiwiIRC/kiwi", "-f", "start", "-c", "/opt/KiwiIRC/config.js"]
