@@ -1,7 +1,5 @@
 FROM node:0.12
 MAINTAINER Allen Day "allenday@allenday.com"
-EXPOSE 6667
-EXPOSE 6697
 EXPOSE 7777
 EXPOSE 7778
 
