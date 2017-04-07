@@ -10,10 +10,9 @@ WORKDIR /opt/KiwiIRC
 COPY dev-server.key /opt/KiwiIRC/server.key
 COPY dev-cert.pem /opt/KiwiIRC/cert.pem
 COPY config.js /opt/KiwiIRC/config.js
+COPY entrypoint.sh /opt/entrypoint.sh
 
 RUN npm install
 RUN ./kiwi build
 
-#RUN apt-get update && apt-get install telnet
-
-CMD ["/opt/KiwiIRC/kiwi", "-f", "start", "-c", "/opt/KiwiIRC/config.js"]
+ENTRYPOINT ["/bin/bash", "-c", "/opt/entrypoint.sh \"$@\"", "--"]

@@ -117,15 +117,15 @@ conf.modules = [
 ];
 
 // WebIRC password enabled for this server
-conf.webirc_pass = "";
+//conf.webirc_pass = "";
 
 // Use the above *OR* the below webirc_pass option
 
 // Multiple WebIRC passwords may be used for multiple servers
-//conf.webirc_pass = {
-//    "irc.network.com":  "configured_webirc_password",
-//    "127.0.0.1":        "foobar"
-//};
+conf.webirc_pass = {
+    "irc.network.com":  "configured_webirc_password",
+    "127.0.0.1":        "foobar"
+};
 
 
 // Whether to verify IRC servers' SSL certificates against built-in well-known certificate authorities
