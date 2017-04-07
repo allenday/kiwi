@@ -1,7 +1,7 @@
 FROM node:0.12
 MAINTAINER Allen Day "allenday@allenday.com"
-EXPOSE 7777
-EXPOSE 7778
+EXPOSE 80
+EXPOSE 443
 
 WORKDIR /opt
 RUN git clone https://github.com/prawnsalad/KiwiIRC.git 
