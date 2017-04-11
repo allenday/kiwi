@@ -3,8 +3,8 @@ MAINTAINER Allen Day "allenday@allenday.com"
 EXPOSE 80
 EXPOSE 443
 
-apt-get update
-apt-get -y install nano
+RUN apt-get update
+RUN apt-get -y install nano
 
 WORKDIR /opt
 RUN git clone https://github.com/prawnsalad/KiwiIRC.git 
