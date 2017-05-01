@@ -5,7 +5,7 @@ conf.user = "";
 conf.group = "";
 
 // Log file location
-conf.log = "kiwi.log";
+conf.log = "/opt/KiwiIRC/kiwi.log";
 
 /*
  * Server listen blocks
