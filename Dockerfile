@@ -10,10 +10,14 @@ WORKDIR /opt
 RUN git clone https://github.com/prawnsalad/KiwiIRC.git 
 
 WORKDIR /opt/KiwiIRC
-COPY dev-server.key /opt/KiwiIRC/server.key
-COPY dev-cert.pem /opt/KiwiIRC/cert.pem
-COPY config.js /opt/KiwiIRC/config.js
-COPY entrypoint.sh /opt/entrypoint.sh
+ADD config.js /opt/KiwiIRC/config.js
+ADD dev-server.key /opt/KiwiIRC/server.key
+ADD dev-cert.pem /opt/KiwiIRC/cert.pem
+ADD entrypoint.sh /opt/entrypoint.sh
+ADD theme/  /opt/KiwiIRC/client/assets/themes/manganese
+ADD plugins/ /kiwiirc/client/assets/plugins/
+
+
 
 RUN npm install
 RUN ./kiwi build

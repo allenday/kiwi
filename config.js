@@ -5,7 +5,7 @@ conf.user = "";
 conf.group = "";
 
 // Log file location
-conf.log = "/opt/KiwiIRC/kiwi.log";
+conf.log = "/dev/stdout";
 
 /*
  * Server listen blocks
@@ -71,7 +71,8 @@ conf.default_encoding = 'utf8';
 * %n will be replaced with the users nick
 * %h will be replaced with the users hostname
 */
-conf.default_gecos = '%n is using a Web IRC client';
+//'%n is on ...';
+conf.default_gecos = 'manganese';
 
 /*
 * Default ident / username for IRC connections
@@ -86,7 +87,7 @@ conf.default_ident = '%i';
 * If a browser gets disconnected without sending a QUIT command, this
 * message will be used instead.
 */
-conf.quit_message = 'http://www.kiwiirc.com/ - A hand-crafted IRC client';
+conf.quit_message = 'manganese';
 
 /*
 * Auto reconnect if the IRC server disconnects a kiwi user
@@ -101,7 +102,7 @@ conf.ircd_reconnect = true;
  * See http://github.com/prawnsalad/KiwiIRC/wiki/Client-plugins
  */
 conf.client_plugins = [
-    // "http://server.com/kiwi/plugins/myplugin.html"
+  '/kiwi/assets/plugins/manganese.html'
 ];
 
 // Directory to find the server modules
@@ -138,7 +139,7 @@ conf.reject_unauthorised_certificates = false;
  */
 
 // Whitelisted HTTP proxies in CIDR format
-conf.http_proxies = ["127.0.0.1/32"];
+conf.http_proxies = ["127.0.0.1/32", "172.17.0.0/16", "10.0.0.0/8"];
 
 // Header that contains the real-ip from the HTTP proxy
 conf.http_proxy_ip_header = "x-forwarded-for";
@@ -146,21 +147,48 @@ conf.http_proxy_ip_header = "x-forwarded-for";
 // Base HTTP path to the KIWI IRC client (eg. /kiwi)
 conf.http_base_path = "/kiwi";
 
+/*
+ * SOCKS (version 5) proxy settings
+ * This feature is only available on node 0.10.0 and above.
+ * Do not enable it if you're running 0.8 or below or Bad Things will happen.
+ */
+conf.socks_proxy = {};
+
+// Enable proxying outbound connections through a SOCKS proxy
+conf.socks_proxy.enabled = false;
+
+// Proxy *all* outbound connections through a SOCKS proxy
+//conf.socks_proxy.all = false;
+
+// Use SOCKS proxy for these hosts only (if conf.sock_proxy.all === false)
+//conf.socks_proxy.proxy_hosts = [
+//    "irc.example.com"
+//];
+
+// Host and port for the SOCKS proxy
+conf.socks_proxy.address = '127.0.0.1';
+conf.socks_proxy.port = 1080;
+
+// Username and password for the SOCKS proxy
+// Set user to null to disable password authentication
+conf.socks_proxy.user = null;
+conf.socks_proxy.pass = null;
+
 // Default settings for the client. These may be changed in the browser
 conf.client = {
     server: 'irc.kiwiirc.com',
     port:    6697,
     ssl:     true,
-    channel: '#kiwiirc',
+    channel: '#manganese',
     channel_key: '',
-    nick:    'kiwi_?',
+    nick:    'manganese_?',
     settings: {
-        theme: 'relaxed',
+        theme: 'manganese',
         text_theme: 'default',
         channel_list_style: 'tabs',
-        scrollback: 250,
-        show_joins_parts: true,
-        show_timestamps: false,
+        scrollback: 500,
+        show_joins_parts: false,
+        show_timestamps: true,
         use_24_hour_timestamps: true,
         mute_sounds: false,
         show_emoticons: true,
@@ -169,11 +197,12 @@ conf.client = {
         show_autocomplete_slideout: true,
         locale: null // null = use the browser locale settings
     },
-    window_title: 'Kiwi IRC'
+    window_title: 'manganese'
 };
 
 // List of themes available for the user to choose from
 conf.client_themes = [
+    'manganese',
     'relaxed',
     'mini',
     'cli',
