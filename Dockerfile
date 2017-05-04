@@ -15,7 +15,7 @@ ADD dev-server.key /opt/KiwiIRC/server.key
 ADD dev-cert.pem /opt/KiwiIRC/cert.pem
 ADD entrypoint.sh /opt/entrypoint.sh
 ADD theme/  /opt/KiwiIRC/client/assets/themes/manganese
-ADD plugins/* /kiwiirc/client/assets/plugins/
+ADD plugins/* /opt/KiwiIRC/client/assets/plugins/
 
 
 
