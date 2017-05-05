@@ -102,7 +102,11 @@ conf.ircd_reconnect = true;
  * See http://github.com/prawnsalad/KiwiIRC/wiki/Client-plugins
  */
 conf.client_plugins = [
-  '/kiwi/assets/plugins/manganese.html'
+  '/kiwi/assets/plugins/manganese.html',
+  '/kiwi/assets/plugins/filepicker.html',
+  '/kiwi/assets/plugins/textstyle.html',
+  '/kiwi/assets/plugins/emoticonlist.html',
+  '/kiwi/assets/plugins/plugin_example.html'
 ];
 
 // Directory to find the server modules
