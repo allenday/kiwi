@@ -103,6 +103,7 @@ conf.ircd_reconnect = true;
  */
 conf.client_plugins = [
   '/kiwi/assets/plugins/manganese.html',
+  '/kiwi/assets/plugins/cobalt.html',
   '/kiwi/assets/plugins/filepicker.html',
   '/kiwi/assets/plugins/textstyle.html',
   '/kiwi/assets/plugins/emoticonlist.html',
@@ -187,7 +188,7 @@ conf.client = {
     channel_key: '',
     nick:    'manganese_?',
     settings: {
-        theme: 'manganese',
+        theme: '__THEME__',
         text_theme: 'default',
         channel_list_style: 'tabs',
         scrollback: 500,
@@ -206,7 +207,7 @@ conf.client = {
 
 // List of themes available for the user to choose from
 conf.client_themes = [
-    'manganese',
+    '__THEME__',
     'relaxed',
     'mini',
     'cli',

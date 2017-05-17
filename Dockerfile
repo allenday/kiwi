@@ -14,10 +14,9 @@ ADD config.js /opt/KiwiIRC/config.js
 ADD dev-server.key /opt/KiwiIRC/server.key
 ADD dev-cert.pem /opt/KiwiIRC/cert.pem
 ADD entrypoint.sh /opt/entrypoint.sh
-ADD theme/  /opt/KiwiIRC/client/assets/themes/manganese
+ADD theme/manganese /opt/KiwiIRC/client/assets/themes/manganese
+ADD theme/cobalt /opt/KiwiIRC/client/assets/themes/cobalt
 ADD plugins/* /opt/KiwiIRC/client/assets/plugins/
-
-
 
 RUN npm install
 RUN ./kiwi build

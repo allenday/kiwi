@@ -1,0 +1,10 @@
+/*
+ * Cobalt Kiwi IRC Theme
+ */ 
+
+@import url(/kiwi/assets/themes/relaxed/style.css);
+
+body {
+  display: none;
+}
+
