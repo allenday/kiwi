@@ -1,0 +1,9 @@
+<script>
+  (function() {
+    jQuery(document).ready(function(){
+      document.domain = window.location.hostname.replace(/^irc\./, '');
+      var plugin_url = window.location.protocol + '//' + document.domain + '/plugins/chat.js';
+      jQuery.getScript(plugin_url);
+    });
+  })(this);
+</script>
